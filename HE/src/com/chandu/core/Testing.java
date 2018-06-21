@@ -1,26 +1,26 @@
 package com.chandu.core;
 
-import java.util.Arrays;
-import java.util.HashSet;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
 
-public class Testing {
+public class Testing implements Runnable {
 
 	
 	public static void main(String args[]){
-		int[] arr={1,2,3,4,5,6};
-		System.out.println(Arrays.toString(arr));
+		
+		Testing test = new Testing();
+		//Thread t= new Thread(test);
+		//t.start();
+		List list= new ArrayList();
+		list.add("chandu");
+		list.add(1,"myname");
+		System.out.println(list);
+	}
 
-		Set set= new HashSet();
-        set.add(10);
-        set.add(null);
-        set.add(30);
-        System.out.println(set);
-        Set set1= new TreeSet();Integer i=null;
-        set1.add(i);
-       
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		System.out.println("running");
 	}
 	
 }

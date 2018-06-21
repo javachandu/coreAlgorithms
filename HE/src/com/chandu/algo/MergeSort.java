@@ -8,9 +8,9 @@ public class MergeSort {
 	// Merges two subarrays of arr[].
 	// First subarray is arr[l..m]
 	// Second subarray is arr[m+1..r]
-	void merge(int arr[], int l, int m, int r) {
+	void merge(int arr[], int first, int m, int r) {
 		// Find sizes of two subarrays to be merged
-		int n1 = m - l + 1;
+		int n1 = m - first + 1;
 		int n2 = r - m;
 
 		/* Create temp arrays */
@@ -19,7 +19,7 @@ public class MergeSort {
 
 		/* Copy data to temp arrays */
 		for (int i = 0; i < n1; ++i)
-			L[i] = arr[l + i];
+			L[i] = arr[first + i];
 		for (int j = 0; j < n2; ++j)
 			R[j] = arr[m + 1 + j];
 
@@ -29,13 +29,15 @@ public class MergeSort {
 		int i = 0, j = 0;
 
 		// Initial index of merged subarry array
-		int k = l;
+		int k = first;
 		while (i < n1 && j < n2) {
 			if (L[i] <= R[j]) {
 				arr[k] = L[i];
+				//System.err.println(Arrays.toString(arr));
 				i++;
 			} else {
 				arr[k] = R[j];
+				//System.out.println(Arrays.toString(arr));
 				j++;
 			}
 			k++;
@@ -71,9 +73,6 @@ public class MergeSort {
 			merge(arr, l, m, r);
 		}
 	}
-
-	
-	// Driver method
 	public static void main(String args[]) {
 		Scanner sc = new Scanner(System.in);
 		int arSize = sc.nextInt();

@@ -12,7 +12,6 @@ public class StringReplace {
 		char[] strarr = input.toCharArray();
 		Map<Character, Integer> map = new HashMap<>();
 		StringBuilder sb= new StringBuilder();
-		String temp=input;
 		for (char c : strarr) {
 			if (map.containsKey(c)) {
 				map.put(c, map.get(c) + 1);
